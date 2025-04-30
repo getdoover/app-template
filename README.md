@@ -13,7 +13,6 @@ application/        <-- Application directory
   Pipfile.lock      <-- Python requirements lock file
   application.py    <-- Main application code
   app_config.py     <-- Config schema definition
-  app_config.json   <-- Config schema export
 ```
 
 The `doover_config.json` file is the doover configuration file for the application. 
