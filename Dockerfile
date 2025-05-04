@@ -22,4 +22,4 @@ COPY . /app
 
 WORKDIR /app
 
-ENTRYPOINT ["python", "-u", "application.py"]
+ENTRYPOINT ["python", "-m", "application"]

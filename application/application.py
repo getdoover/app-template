@@ -2,11 +2,12 @@ import logging
 import random
 import time
 
-from pydoover.docker import Application, run_app
+from pydoover.docker import Application
 from pydoover import ui
 
-from app_config import SampleConfig
-from app_ui import SampleUI
+from .app_config import SampleConfig
+from .app_ui import SampleUI
+from .app_state import SampleState
 
 # UI Will look like this
 
@@ -32,9 +33,11 @@ class SampleApplication(Application):
     def setup(self):
         self.started = time.time()
         self.ui = SampleUI()
+        self.state = SampleState()
         self.ui_manager.add_children(*self.ui.fetch())
 
     def main_loop(self):
+        log.info(f"State is: {self.state.state}")
         self.ui.update(
             True,
             random.randint(900, 2100) / 100,
@@ -57,7 +60,3 @@ class SampleApplication(Application):
     def on_state_command(self, new_value):
         log.info(f"New value for state command: {new_value}")
 
-
-if __name__ == "__main__":
-    app = SampleApplication(config=SampleConfig())
-    run_app(app)
