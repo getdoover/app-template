@@ -35,11 +35,20 @@
                     "x-name": "a_funny_message",
                     "x-hidden": false,
                     "type": "string"
+                },
+                "simulator_app_key": {
+                    "format": "doover-application",
+                    "title": "Simulator App Key",
+                    "x-name": "simulator_app_key",
+                    "x-hidden": false,
+                    "type": "string",
+                    "description": "The app key for the simulator"
                 }
             },
             "additionalElements": true,
             "required": [
-                "a_funny_message"
+                "a_funny_message",
+                "simulator_app_key"
             ]
         }
     }

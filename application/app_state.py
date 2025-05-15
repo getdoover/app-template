@@ -1,4 +1,8 @@
+import logging
+
 from pydoover.state import StateMachine
+
+log = logging.getLogger(__name__)
 
 class SampleState:
     state: str
@@ -23,10 +27,10 @@ class SampleState:
         )
 
     async def on_enter_off(self):
-        print("State changed to off!")
+        log.info("State changed to off!")
 
     async def on_enter_on(self):
-        print("State changed to on!")
+        log.info("State changed to on!")
 
     # typehints for trigger methods
     # async def enable_warning(self): ...

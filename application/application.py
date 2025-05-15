@@ -30,17 +30,25 @@ log = logging.getLogger()
 class SampleApplication(Application):
     config: SampleConfig  # not necessary, but helps your IDE provide autocomplete!
 
-    def setup(self):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
         self.started = time.time()
         self.ui = SampleUI()
         self.state = SampleState()
+
+    def setup(self):
         self.ui_manager.add_children(*self.ui.fetch())
 
     def main_loop(self):
         log.info(f"State is: {self.state.state}")
+
+        # a random value we set inside our simulator. Go check it out in simulators/sample!
+        random_value = self.get_tag(self.config.sim_app_key.value, "random_value")
+
         self.ui.update(
             True,
-            random.randint(900, 2100) / 100,
+            random_value,
             time.time() - self.started,
         )
 
@@ -59,4 +67,3 @@ class SampleApplication(Application):
     @ui.callback("charge_mode")
     def on_state_command(self, new_value):
         log.info(f"New value for state command: {new_value}")
-
