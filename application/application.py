@@ -37,10 +37,10 @@ class SampleApplication(Application):
         self.ui = SampleUI()
         self.state = SampleState()
 
-    def setup(self):
+    async def setup(self):
         self.ui_manager.add_children(*self.ui.fetch())
 
-    def main_loop(self):
+    async def main_loop(self):
         log.info(f"State is: {self.state.state}")
 
         # a random value we set inside our simulator. Go check it out in simulators/sample!
@@ -53,17 +53,17 @@ class SampleApplication(Application):
         )
 
     @ui.callback("send_alert")
-    def on_send_alert(self, new_value):
+    async def on_send_alert(self, new_value):
         log.info(f"Sending alert: {self.ui.test_output.current_value}")
-        self.publish_to_channel("significantAlerts", self.ui.test_output.current_value)
+        await self.publish_to_channel("significantAlerts", self.ui.test_output.current_value)
         self.ui.send_alert.coerce(None)
 
     @ui.callback("test_message")
-    def on_text_parameter_change(self, new_value):
+    async def on_text_parameter_change(self, new_value):
         log.info(f"New value for test message: {new_value}")
         # Set the value as an output to the corresponding variable is this case
         self.ui.test_output.update(new_value)
 
     @ui.callback("charge_mode")
-    def on_state_command(self, new_value):
+    async def on_state_command(self, new_value):
         log.info(f"New value for state command: {new_value}")
