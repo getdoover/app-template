@@ -1,5 +1,4 @@
 import logging
-import random
 import time
 
 from pydoover.docker import Application
@@ -8,22 +7,6 @@ from pydoover import ui
 from .app_config import SampleConfig
 from .app_ui import SampleUI
 from .app_state import SampleState
-
-# UI Will look like this
-
-# Variable : Is Working : Bool
-# Variable : Uptime : Int
-# Parameter : Test Message
-# Variable : Test Output
-# Action : Send this text as an alert
-# Submodule :
-#      Variable : Battery Voltage
-#      Parameter : Low Battery Voltage Alert
-#            Once below this setpoint, send a text and show a warning
-#      StateCommand : Charge Battery Mode
-#           - Charge
-#           - Discharge
-#           - Idle
 
 log = logging.getLogger()
 

@@ -26,7 +26,7 @@ class SampleConfig(config.Schema):
 
 
 def export():
-    SampleConfig().export(Path("../doover_config.json"), "sample_application")
+    SampleConfig().export(Path(__file__).parent.parent / "doover_config.json", "sample_application")
 
 if __name__ == "__main__":
     export()
