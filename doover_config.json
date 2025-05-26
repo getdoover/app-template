@@ -1,6 +1,10 @@
 {
     "deployment_package_dir": "deployment/",
     "sample_application": {
+        "name": "App Template",
+        "description": "A template application for Doover",
+        "type": "application",
+        "image_tag": "ghcr.io/getdoover/app_template",
         "config_schema": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": "",
