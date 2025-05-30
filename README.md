@@ -10,20 +10,16 @@ The basic structure of the repository is as follows:
 ## Getting Started
 
 ```
-doover_config.json  <-- Configuration file for doover
-Dockerfile          <-- Dockerfile for building the application image
-Pipfile             <-- Python dependencies
-Pipfile.lock        <-- Locked dependencies
 README.md           <-- This file
+pyproject.toml      <-- Python project configuration file (including dependencies)
+Dockerfile          <-- Dockerfile for building the application image
+doover_config.json  <-- Configuration file for doover
 
-application/        <-- Application directory
+src/app_template/   <-- Application directory
   application.py    <-- Main application code
   app_config.py     <-- Config schema definition
   app_ui.py         <-- UI code (if applicable)
   app_state.py      <-- State machine (if applicable)
-
-deployment/
-  docker-compose.yml <-- Docker Compose file for deployment
 
 simulator/
   app_config.json   <-- Sample configuration for the simulator
@@ -33,14 +29,10 @@ tests/
     test_imports.py  <-- Test file for the application
 ```
 
-The `doover_config.json` file is the doover configuration file for the application.
-It defines where the Doover site should find the application code. In our case, this is a fairly straightforward
+The `doover_config.json` file is the doover configuration file for the application. 
 
-```json
-{
-    "deployment_package_dir": "deployment/"
-}
-```
+It defines all metadata about the application, including name, short and long description, 
+dependent apps, image name, owner organisation, container registry and more.
 
 ### Prerequisites
 
@@ -53,7 +45,7 @@ It defines where the Doover site should find the application code. In our case, 
 1. Run the application:
 
 ```bash
-cd simulator && docker copmose up --build
+cd simulator && docker compose up --build
 ```
 
 ## Simulators
