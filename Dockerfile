@@ -1,4 +1,5 @@
 FROM spaneng/doover_device_base AS base_image
+LABEL doover.app="true"
 
 ## FIRST STAGE ##
 FROM base_image AS builder
@@ -6,9 +7,6 @@ FROM base_image AS builder
 COPY --from=ghcr.io/astral-sh/uv:0.7.3 /uv /uvx /bin/
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 ENV UV_PYTHON_DOWNLOADS=0
-
-# needed for pydoover from source
-RUN apt update && apt install -y git
 
 WORKDIR /app
 

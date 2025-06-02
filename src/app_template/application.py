@@ -27,7 +27,8 @@ class SampleApplication(Application):
         log.info(f"State is: {self.state.state}")
 
         # a random value we set inside our simulator. Go check it out in simulators/sample!
-        random_value = self.get_tag(self.config.sim_app_key.value, "random_value")
+        random_value = self.get_tag("random_value", self.config.sim_app_key.value)
+        log.info("Random value from simulator: %s", random_value)
 
         self.ui.update(
             True,

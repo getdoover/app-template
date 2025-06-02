@@ -45,7 +45,7 @@ dependent apps, image name, owner organisation, container registry and more.
 1. Run the application:
 
 ```bash
-cd simulator && docker compose up --build
+doover app run
 ```
 
 ## Simulators
