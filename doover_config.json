@@ -19,22 +19,6 @@
             "title": "Application Config",
             "type": "object",
             "properties": {
-                "digital_input_count": {
-                    "title": "Digital Input Count",
-                    "x-name": "digital_input_count",
-                    "x-hidden": false,
-                    "type": "integer",
-                    "default": "$device.digitalinputcount",
-                    "minimum": 0
-                },
-                "digital_output_count": {
-                    "title": "Digital Output Count",
-                    "x-name": "digital_output_count",
-                    "x-hidden": false,
-                    "type": "integer",
-                    "default": "$device.digitaloutputcount",
-                    "minimum": 0
-                },
                 "digital_outputs_enabled": {
                     "title": "Digital Outputs Enabled",
                     "x-name": "digital_outputs_enabled",

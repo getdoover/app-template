@@ -16,11 +16,13 @@ class SampleApplication(Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.started = time.time()
-        self.ui = SampleUI()
-        self.state = SampleState()
+        self.started: float = time.time()
+        self.ui: SampleUI = None
+        self.state: SampleState = None
 
     async def setup(self):
+        self.ui = SampleUI()
+        self.state = SampleState()
         self.ui_manager.add_children(*self.ui.fetch())
 
     async def main_loop(self):
