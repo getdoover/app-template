@@ -9,9 +9,9 @@
         "description": "A template application for Doover",
         "long_description": "README.md",
         "depends_on": [],
-        "owner_org": "",
+        "owner_org_key": "",
         "image_name": "ghcr.io/getdoover/app_template",
-        "container_registry_profile": "",
+        "container_registry_profile_key": "",
         "build_args": "--platform linux/amd64,linux/arm64",
         "config_schema": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
