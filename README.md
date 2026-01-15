@@ -1,80 +1,74 @@
-# Doover Application Template
+<div align="center">
 
-This repository serves as a template for creating Doover applications.
+# Doover App Template
 
-It provides a structured layout for application code, deployment configurations, simulators, and tests. The template is
-designed to simplify the development and deployment of Doover-compatible applications.
+<img src="https://doover.com/wp-content/uploads/Doover-Logo-Landscape-Blue.png" alt="App Icon" style="max-width: 300px;">
 
-The basic structure of the repository is as follows:
+**A ready template for a Doover Application**
 
-## Getting Started
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/getdoover/app-template)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/getdoover/app-template/blob/main/LICENSE)
 
-```
-README.md           <-- This file
-pyproject.toml      <-- Python project configuration file (including dependencies)
-Dockerfile          <-- Dockerfile for building the application image
-doover_config.json  <-- Configuration file for doover
+[Getting Started](#-getting-started) • [Configuration](#configuration) • [Developer](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md) • [Need Help?](#need-help)
 
-src/app_template/   <-- Application directory
-  application.py    <-- Main application code
-  app_config.py     <-- Config schema definition
-  app_ui.py         <-- UI code (if applicable)
-  app_state.py      <-- State machine (if applicable)
+</div>
 
-simulator/
-  app_config.json   <-- Sample configuration for the simulator
-  docker-compose.yml <-- Docker Compose file for the simulator
-  
-tests/
-    test_imports.py  <-- Test file for the application
-```
+---
 
-The `doover_config.json` file is the doover configuration file for the application. 
+## 📖 Overview
 
-It defines all metadata about the application, including name, short and long description, 
-dependent apps, image name, owner organisation, container registry and more.
+A ready-to-use template for building Doover applications. This template provides the essential structure and configuration needed to quickly get started with app development on the Doover platform.
 
-### Prerequisites
+---
 
-- Docker and Docker Compose installed
-- Python 3.11 or later (if running locally)
-- Pipenv for managing Python dependencies
+## 🚀 Getting Started
 
-### Running Locally
+### How to Use
 
-1. Run the application:
+#### Quick Start Guide
 
-```bash
-doover app run
-```
+This Doover App can be managed via the Doover CLI, and installed quickly onto devices through the Doover platform.
 
-## Simulators
+### Configuration
 
-The `simulator/` directory contains tools for simulating application behavior. For example:
+#### Settings Overview
 
-- `app_config.json`: Sample configuration file for the app.
-- `docker-compose.yml`: Defines services for running the application.
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Setting Name 1** | What this setting controls | `default value` |
+| **Setting Name 2** | What this setting controls | `default value` |
 
-You can find a sample simulator in the `simulator/sample/` directory. While it is fairly bare-bones, it shows
-positioning of the simulator in the application structure, and how to start the simulator alongside your application.
+---
 
-## Testing
+## 🔗 Integrations
 
-Run the tests using the following command:
+This app works seamlessly with:
 
-```bash
-pytest tests/
-```
+- **🔌 Integration 1**: Brief description of how they work together
+- **🔌 Integration 2**: Brief description of how they work together
 
-## Deployment
+---
 
-The `deployment/` directory contains deployment configurations, including a `docker-compose.yml` file for orchestrating
-services.
+### Need Help?
 
-## Customization
+- 📧 Email: support@doover.com
+- 💬 [Community Forum](https://doover.com/community)
+- 📖 [Full Documentation](https://docs.doover.com)
+- 👨‍💻 [Developer Documentation](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md)
 
-To create your own Doover application:
+---
 
-1. Modify the application logic in the appropriate directory.
-2. Update the simulator and test configurations as needed.
-3. Adjust deployment configurations to suit your requirements.
+## 🔄 Version History
+
+### v1.0.0 (Current)
+- 🎉 Initial release
+- ✨ Feature 1 added
+- ✨ Feature 2 added
+- 🐛 Bug fixes
+
+
+---
+
+## 📄 License
+
+This app is licensed under the [Apache License 2.0](https://github.com/getdoover/app-template/blob/main/LICENSE).
