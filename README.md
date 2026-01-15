@@ -1,8 +1,7 @@
-<div align="center">
 
 # Doover App Template
 
-<img src="https://doover.com/wp-content/uploads/Doover-Logo-Landscape-Blue.png" alt="App Icon" style="max-width: 300px;">
+<img src="https://doover.com/wp-content/uploads/Doover-Logo-Landscape-Navy-padded-small.png" alt="App Icon" style="max-width: 300px;">
 
 **A ready template for a Doover Application**
 
@@ -11,15 +10,13 @@
 
 [Getting Started](#-getting-started) • [Configuration](#configuration) • [Developer](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md) • [Need Help?](#need-help)
 
-</div>
-
----
+<br/>
 
 ## 📖 Overview
 
 A ready-to-use template for building Doover applications. This template provides the essential structure and configuration needed to quickly get started with app development on the Doover platform.
 
----
+<br/>
 
 ## 🚀 Getting Started
 
@@ -38,25 +35,35 @@ This Doover App can be managed via the Doover CLI, and installed quickly onto de
 | **Setting Name 1** | What this setting controls | `default value` |
 | **Setting Name 2** | What this setting controls | `default value` |
 
----
+<br/>
 
 ## 🔗 Integrations
+
+### Tags
+
+This app may expose some tags:
+
+| Setting | Description |
+|---------|-------------|
+| **Tag 1** | What this tag does |
+| **Tag 2** | Waht this tag does |
+
+<br/>
 
 This app works seamlessly with:
 
 - **🔌 Integration 1**: Brief description of how they work together
 - **🔌 Integration 2**: Brief description of how they work together
 
----
+<br/>
 
 ### Need Help?
 
 - 📧 Email: support@doover.com
-- 💬 [Community Forum](https://doover.com/community)
-- 📖 [Full Documentation](https://docs.doover.com)
-- 👨‍💻 [Developer Documentation](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md)
+- 📖 [Doover Documentation](https://docs.doover.com)
+- 👨‍💻 [App Developer Documentation](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md)
 
----
+<br/>
 
 ## 🔄 Version History
 
@@ -66,8 +73,7 @@ This app works seamlessly with:
 - ✨ Feature 2 added
 - 🐛 Bug fixes
 
-
----
+<br/>
 
 ## 📄 License
 
