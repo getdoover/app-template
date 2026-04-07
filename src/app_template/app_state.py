@@ -22,7 +22,7 @@ class SampleState:
             states=self.states,
             transitions=self.transitions,
             model=self,
-            initial="warning_disabled",
+            initial="off",
             queued=True,
         )
 

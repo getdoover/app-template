@@ -16,29 +16,38 @@
         "config_schema": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": "",
-            "title": "Application Config",
+            "title": "$default",
             "type": "object",
             "properties": {
                 "digital_outputs_enabled": {
                     "title": "Digital Outputs Enabled",
                     "x-name": "digital_outputs_enabled",
                     "x-hidden": false,
-                    "type": "boolean",
-                    "default": true
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "x-required": false,
+                    "default": true,
+                    "x-position": 0
                 },
                 "a_funny_message": {
                     "title": "A Funny Message",
                     "x-name": "a_funny_message",
                     "x-hidden": false,
-                    "type": "string"
+                    "type": "string",
+                    "x-required": true,
+                    "x-position": 1
                 },
                 "simulator_app_key": {
-                    "format": "doover-application",
                     "title": "Simulator App Key",
                     "x-name": "simulator_app_key",
                     "x-hidden": false,
+                    "format": "doover-resource-application",
                     "type": "string",
-                    "description": "The app key for the simulator"
+                    "x-required": true,
+                    "description": "The app key for the simulator",
+                    "x-position": 2
                 }
             },
             "additionalElements": true,

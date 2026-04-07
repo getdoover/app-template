@@ -5,25 +5,24 @@ from pydoover.docker import Application
 from pydoover import ui
 
 from .app_config import SampleConfig
+from .app_tags import SampleTags
 from .app_ui import SampleUI
 from .app_state import SampleState
 
-log = logging.getLogger()
+log = logging.getLogger(__name__)
+
 
 class SampleApplication(Application):
-    config: SampleConfig  # not necessary, but helps your IDE provide autocomplete!
+    config_cls = SampleConfig
+    tags_cls = SampleTags
+    ui_cls = SampleUI
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.started: float = time.time()
-        self.ui: SampleUI = None
-        self.state: SampleState = None
+    config: SampleConfig
+    tags: SampleTags
 
     async def setup(self):
-        self.ui = SampleUI()
+        self.started = time.time()
         self.state = SampleState()
-        self.ui_manager.add_children(*self.ui.fetch())
 
     async def main_loop(self):
         log.info(f"State is: {self.state.state}")
@@ -32,24 +31,22 @@ class SampleApplication(Application):
         random_value = self.get_tag("random_value", self.config.sim_app_key.value)
         log.info("Random value from simulator: %s", random_value)
 
-        self.ui.update(
-            True,
-            random_value,
-            time.time() - self.started,
-        )
+        await self.tags.is_working.set(True)
+        await self.tags.battery_voltage.set(random_value)
+        await self.tags.uptime.set(time.time() - self.started)
 
-    @ui.callback("send_alert")
-    async def on_send_alert(self, new_value):
-        log.info(f"Sending alert: {self.ui.test_output.current_value}")
-        await self.publish_to_channel("significantAlerts", self.ui.test_output.current_value)
-        self.ui.send_alert.coerce(None)
+    @ui.handler("send_alert")
+    async def on_send_alert(self, ctx, value):
+        output = self.tags.test_output.get()
+        log.info(f"Sending alert: {output}")
+        await self.create_message("significantAlerts", {"text": output})
+        await ctx.set_value(None)
 
-    @ui.callback("test_message")
-    async def on_text_parameter_change(self, new_value):
-        log.info(f"New value for test message: {new_value}")
-        # Set the value as an output to the corresponding variable is this case
-        self.ui.test_output.update(new_value)
+    @ui.handler("test_message")
+    async def on_text_parameter_change(self, ctx, value):
+        log.info(f"New value for test message: {value}")
+        await self.tags.test_output.set(value)
 
-    @ui.callback("charge_mode")
-    async def on_state_command(self, new_value):
-        log.info(f"New value for state command: {new_value}")
+    @ui.handler("charge_mode")
+    async def on_state_command(self, ctx, value):
+        log.info(f"New value for state command: {value}")
