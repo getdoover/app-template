@@ -7,6 +7,7 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/getdoover/app-template)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/getdoover/app-template/blob/main/LICENSE)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/getdoover/app-template?quickstart=1)
 
 [Getting Started](#-getting-started) • [Configuration](#configuration) • [Developer](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md) • [Need Help?](#need-help)
 
@@ -23,6 +24,16 @@ A ready-to-use template for building Doover applications. This template provides
 ### How to Use
 
 #### Quick Start Guide
+
+Click the **Open in GitHub Codespaces** badge above to launch a ready-to-go development environment with:
+- Python 3.13, uv, and all project dependencies
+- Doover CLI (`doover`) pre-installed — you'll be prompted to log in on first open
+- Claude Code with [doover-skills](https://github.com/getdoover/doover-skills) pre-configured
+
+> **Claude Code:** You'll be prompted for your `ANTHROPIC_API_KEY` when creating a Codespace.
+> Get a key at [console.anthropic.com](https://console.anthropic.com/settings/keys).
+> To skip this prompt in future, save it as a permanent secret at
+> [github.com/settings/codespaces](https://github.com/settings/codespaces).
 
 This Doover App can be managed via the Doover CLI, and installed quickly onto devices through the Doover platform.
 
