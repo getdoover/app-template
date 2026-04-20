@@ -6,7 +6,8 @@ A template for building device applications on the Doover IoT platform using pyd
 
 ```bash
 uv run pytest tests -v          # Run tests
-uv run export-config             # Export doover_config.json from config schema
+uv run export-config             # Write config_schema into doover_config.json
+uv run export-ui                 # Write ui_schema into doover_config.json (required to publish)
 doover app run                   # Run app + simulator locally via docker-compose
 ```
 

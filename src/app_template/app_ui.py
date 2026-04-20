@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from pydoover import ui
 
 from .app_tags import SampleTags
@@ -38,3 +40,14 @@ class SampleUI(ui.UI):
             ),
         ],
     )
+
+
+def export():
+    SampleUI(None, None, None).export(
+        Path(__file__).parents[2] / "doover_config.json",
+        "sample_application",
+    )
+
+
+if __name__ == "__main__":
+    export()

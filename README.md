@@ -5,7 +5,6 @@
 
 **A ready template for a Doover Application**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/getdoover/app-template)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/getdoover/app-template/blob/main/LICENSE)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/getdoover/app-template?quickstart=1)
 
@@ -15,7 +14,13 @@
 
 ## 📖 Overview
 
-A ready-to-use template for building Doover applications. This template provides the essential structure and configuration needed to quickly get started with app development on the Doover platform.
+A ready-to-use template for building Doover applications. This template provides the essential
+structure and configuration needed to quickly get started with app development on the Doover
+platform, using [pydoover](https://github.com/getdoover/pydoover) 1.0.
+
+Use this repository as a starting point: fork it (or use the "Use this template" button),
+rename the `app_template` package, and replace the sample config, tags, UI, and state machine
+with your own.
 
 <br/>
 
@@ -39,12 +44,16 @@ This Doover App can be managed via the Doover CLI, and installed quickly onto de
 
 ### Configuration
 
-#### Settings Overview
+Configuration fields are declared in [`src/app_template/app_config.py`](src/app_template/app_config.py).
+The sample schema ships with:
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Setting Name 1** | What this setting controls | `default value` |
-| **Setting Name 2** | What this setting controls | `default value` |
+| **Digital Outputs Enabled** | Toggle whether the app drives digital outputs | `true` |
+| **A Funny Message** | Free-text message used by the sample alert button | *(required)* |
+| **Simulator App Key** | App key of the simulator supplying `random_value` | *(required)* |
+
+Replace these with your own fields, then regenerate `doover_config.json` with `uv run export-config`.
 
 <br/>
 
@@ -52,19 +61,14 @@ This Doover App can be managed via the Doover CLI, and installed quickly onto de
 
 ### Tags
 
-This app may expose some tags:
+The sample app publishes a few example tags via [`src/app_template/app_tags.py`](src/app_template/app_tags.py):
 
-| Setting | Description |
-|---------|-------------|
-| **Tag 1** | What this tag does |
-| **Tag 2** | Waht this tag does |
-
-<br/>
-
-This app works seamlessly with:
-
-- **🔌 Integration 1**: Brief description of how they work together
-- **🔌 Integration 2**: Brief description of how they work together
+| Tag | Description |
+|-----|-------------|
+| **is_working** | Heartbeat — `true` while the main loop is running |
+| **uptime** | Seconds since the app started |
+| **battery_voltage** | Example numeric value sourced from the simulator |
+| **test_output** | Echoes text entered in the UI |
 
 <br/>
 
@@ -73,16 +77,6 @@ This app works seamlessly with:
 - 📧 Email: support@doover.com
 - 📖 [Doover Documentation](https://docs.doover.com)
 - 👨‍💻 [App Developer Documentation](https://github.com/getdoover/app-template/blob/main/DEVELOPMENT.md)
-
-<br/>
-
-## 🔄 Version History
-
-### v1.0.0 (Current)
-- 🎉 Initial release
-- ✨ Feature 1 added
-- ✨ Feature 2 added
-- 🐛 Bug fixes
 
 <br/>
 
