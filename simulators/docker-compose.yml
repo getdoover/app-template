@@ -1,6 +1,6 @@
 services:
   device_agent:
-    image: spaneng/doover_device_agent:apps
+    image: spaneng/doover-device-agent:main
     network_mode: host
 
   sample_simulator:
